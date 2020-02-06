@@ -50,8 +50,7 @@
 		$UA = file_get_contents("UserAgent.txt");
 		$UA = explode("\n", $UA);
 		
-		While(true) {
-		echo "[+]Masukan Nomer HP : ";
+		echo "[+] Masukan Nomer HP : ";
 		$nomerhp = trim(fgets(STDIN));
 		
 		$st = (string)(microtime(true) * 10000);
@@ -70,10 +69,9 @@
 		
 		$y = curl('https://apiservice.rupiahcepatweb.com/webapi/v1/request_login_register_auth_code','data=%7B%22mobile%22%3A%22'.$nomerhp.'%22%2C%22noise%22%3A%22'.$st.rand(10000, 99999).'%22%2C%22request_time%22%3A%22'.$st.rand(0, 9).'%22%2C%22access_token%22%3A%2211111%22%7D',$headers,null);
 		$y = $y[0];
-		
 		echo $y."\n";
 		
-		echo "[+]Masukan Nomer Pin: ";
+		echo "[+] Masukan Nomer Pin: ";
 		$pinhp = trim(fgets(STDIN));
 		
 		unset($headers[6]);
@@ -83,6 +81,5 @@
 		
 		echo $z;
 		
-		}
 		
 		
